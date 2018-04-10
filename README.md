@@ -6,12 +6,12 @@ This legacy libraries included in tomcat 8 are cause of bugs inside Liferay. I s
 
 2- Liferay 7.0 DXP SP7 has a bad error because it wires the old xerces libraries in the services code. So you need a patch to add in the ${home.liferay}/tomcat-8.0.32/webapps/ROOT/WEB-INF/lib folder. The patch can be can be found here
 
-3- build the patch through the command: mvn install and copy in the lib tomcat folder
+3- Build the patch through the command: mvn install and copy in the lib tomcat folder
 
 4- XML libraries need the org.w3c.dom package working as system library. To add it and avoid unespected ClassNotFound exceptions put this property in the portal-ext.properties of Liferay:
 
 module.framework.properties.org.osgi.framework.bootdelegation=com.liferay.aspectj,__redirected,  com.sun.jna,com.sun.ccpp,com.liferay.portal.servlet.delegate, com.sun.syndication,org.w3c.dom,sun.reflect
 
-5- restart liferay
+5- Restart Liferay
 
 You are ready to work with the native XML libraries. Good work!

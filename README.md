@@ -4,7 +4,7 @@ This legacy libraries included in tomcat 8 are cause of bugs inside Liferay. I s
 1- Open the setenv.sh file inside ${home.liferay}/tomcat-8.0.32/bin and add the following properties in the CATALINA_OPTS: 
 -Djavax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema=com.sun.org.apache.xerces.internal.jaxp.validation.XMLSchemaFactory -Djavax.xml.parsers.DocumentBuilderFactory=com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=com.sun.org.apache.xerces.internal.jaxp.SAXParserFactoryImpl
 
-2- Liferay DXP 7.0 has a bad error because it cablates the old xerces libraries in the services code. So you need a patch to add in the ${home.liferay}/tomcat-8.0.32/webapps/ROOT/WEB-INF/lib folder. The patch can be can be found here
+2- Liferay 7.0 DXP SP7 has a bad error because it wires the old xerces libraries in the services code. So you need a patch to add in the ${home.liferay}/tomcat-8.0.32/webapps/ROOT/WEB-INF/lib folder. The patch can be can be found here
 
 3- build the patch through the command: mvn install and copy in the lib tomcat folder
 
